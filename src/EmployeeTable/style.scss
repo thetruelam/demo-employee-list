@@ -1,0 +1,74 @@
+.EmployeeTable {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  &__header,
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 -15px;
+    &--item {
+      flex: 2 1;
+      text-align: left;
+      padding: 0 15px;
+    }
+  }
+  &__header {
+    padding: 2rem 0 0.5rem;
+    font-weight: 500;
+    color: #c71585;
+    border-bottom: 4px solid #ff69b4;
+    &--item {
+      &:first-child {
+        flex: 1;
+        text-align: right;
+      }
+    }
+    &--Name,
+    &--EmployeeID {
+      position: relative;
+      display: inline-block;
+      &:after {
+        content: "";
+        background-image: url(images/icons/arrows-alt-h-solid.svg);
+        background-repeat: no-repeat;
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(110%, -50%);
+        width: 40px;
+        height: 20px;
+      }
+    }
+  }
+  &__row {
+    color: #c71585;
+    padding: 20px 0;
+    background-color: #fff;
+    &:hover {
+      background-color: rgba(255, 20, 147, 0.5);
+      color: #fff;
+      cursor: pointer;
+    }
+    &--Image {
+      padding: 0 15px;
+      flex: 1;
+      img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        float: right;
+      }
+    }
+    &--Name {
+      font-weight: 700;
+    }
+  }
+  &__spinner-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

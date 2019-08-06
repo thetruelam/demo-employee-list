@@ -1,0 +1,50 @@
+.ToolBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  background-color: #c71585;
+  color: #fff;
+  padding: 0 3rem;
+  box-sizing: border-box;
+  &__item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__BreadCrump {
+    margin: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  &__number {
+    font-size: 2rem;
+    font-weight: 200;
+    margin-left: 1rem;
+  }
+  &__button {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    cursor: pointer;
+    margin: 1rem;
+    position: relative;
+    &:after {
+      content: "";
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &--filter:after {
+      background-image: url(images/icons/filter-solid.svg);
+    }
+    &--features:after {
+      background-image: url(images/icons/ellipsis-v-solid.svg);
+    }
+  }
+}
