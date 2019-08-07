@@ -1,11 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import './style.scss';
 
 import EmployeeTableHeader from './EmployeeTableHeader';
 import EmployeeTableRow from './EmployeeTableRow';
 import Spinner from '../Spinner';
-import { fetchEmployees } from './actions'
+import { fetchEmployees, selectColumn, unselectColumn, selectAll, unselectAll } from './actions';
 import Aux from '../hoc/A';
 
 class EmployeeTable extends React.Component {
@@ -13,8 +13,26 @@ class EmployeeTable extends React.Component {
     this.props.fetchEmployees();
   }
 
+  handleCheckBox = (e, employee) => {
+    if (e.target.checked) {
+      this.props.selectColumn(employee);
+    } else {
+      this.props.unselectColumn(employee);
+    }
+  }
+
+  toggleSelectAll = (e) => {
+    if (e.target.checked) {
+      this.props.selectAll();
+      console.log('checked')
+    } else {
+      this.props.unselectAll();
+      console.log('unchecked')
+    }
+  }
+
   render() {
-    const { isFetching, employees, isFilter, filters } = this.props
+    const { isFetching, employees, isFilter, filters, isSelectColumns, isSelectAll } = this.props
     let table;
 
     if (isFetching) {
@@ -45,9 +63,19 @@ class EmployeeTable extends React.Component {
 
       table = (
         <Aux>
-          <EmployeeTableHeader fields={fields} />
+          <EmployeeTableHeader
+            fields={fields}
+            showCheckBox={isSelectColumns}
+            toggleSelectAll={this.toggleSelectAll}
+            isSelectAll={isSelectAll}
+          />
           {renderEmployees.map(employee => (
-            <EmployeeTableRow key={employee['Employee ID']} employee={employee} />
+            <EmployeeTableRow
+              key={employee['Employee ID']}
+              employee={employee}
+              showCheckBox={isSelectColumns}
+              handleCheckBox={this.handleCheckBox}
+            />
           ))}
         </Aux>
       )
@@ -64,13 +92,19 @@ class EmployeeTable extends React.Component {
 const mapState = state => ({
   employees: state.EmployeeTable.listEmployees,
   isFetching: state.EmployeeTable.isFetching,
+  isSelectColumns: state.EmployeeTable.isSelectColumns,
+  isSelectAll: state.EmployeeTable.isSelectAll,
   isFilter: state.SideFilter.showSideFilter,
   filters: state.SideFilter.filters
 });
 
 const mapDispatch = dispatch => ({
-  fetchEmployees: () => dispatch(fetchEmployees())
-})
+  fetchEmployees: () => dispatch(fetchEmployees()),
+  selectColumn: (employee) => dispatch(selectColumn(employee)),
+  unselectColumn: (employee) => dispatch(unselectColumn(employee)),
+  selectAll: () => dispatch(selectAll()),
+  unselectAll: () => dispatch(unselectAll())
+});
 
 export default connect(
   mapState,

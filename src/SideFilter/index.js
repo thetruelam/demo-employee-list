@@ -20,7 +20,7 @@ class SideFilter extends React.Component {
 
   handleInputChange = (e) => {
     let data = {
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '')
     }
     // console.log(data);
     this.props.inputChange(data);

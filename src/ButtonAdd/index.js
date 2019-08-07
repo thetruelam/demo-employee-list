@@ -4,7 +4,9 @@ import classes from './style.module.scss';
 
 const ButtonAdd = () => {
   return (
-    <button className={classes.ButtonAdd}>+</button>
+    <div className={classes.ButtonAdd}>
+      <span>+</span>
+    </div>
   )
 }
 

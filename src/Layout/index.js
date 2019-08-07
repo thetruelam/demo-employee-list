@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   return (
     <Aux>
       {/* <LayoutHeader /> */}
-      <ToolBar employeesNumber={5} />
+      <ToolBar />
       <main className={classes.content}>
         {children}
       </main>

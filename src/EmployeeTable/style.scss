@@ -13,17 +13,20 @@
       text-align: left;
       padding: 0 15px;
     }
+    &--checkbox {
+      padding: 0 15px;
+      flex: 0.5;
+      text-align: right;
+    }
   }
   &__header {
     padding: 2rem 0 0.5rem;
     font-weight: 500;
     color: #c71585;
     border-bottom: 4px solid #ff69b4;
-    &--item {
-      &:first-child {
-        flex: 1;
-        text-align: right;
-      }
+    .Image {
+      flex: 1;
+      text-align: center;
     }
     &--Name,
     &--EmployeeID {
@@ -47,6 +50,7 @@
     color: #c71585;
     padding: 20px 0;
     background-color: #fff;
+    &--selected,
     &:hover {
       background-color: rgba(255, 20, 147, 0.5);
       color: #fff;
@@ -55,11 +59,12 @@
     &--Image {
       padding: 0 15px;
       flex: 1;
+      display: flex;
+      justify-content: center;
       img {
         height: 50px;
         width: 50px;
         border-radius: 50%;
-        float: right;
       }
     }
     &--Name {
