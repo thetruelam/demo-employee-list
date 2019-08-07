@@ -1,71 +1,53 @@
 import React from 'react';
 import { Checkbox } from 'antd';
 
-class EmployeeTableRow extends React.Component {
-  state = {
-    isSelected: false
+const EmployeeTableRow = ({ employee, showCheckBox, isSelected, handleCheckBox }) => {
+  let attachedClasses = ['EmployeeTable__row'];
+  let renderItems = [];
+
+  if (isSelected) {
+    attachedClasses.push('EmployeeTable__row--selected');
   }
 
-  componentWillUpdate() {
-    if (!this.props.showCheckBox && this.state.isSelected) {
-      this.setState({ isSelected: false });
-    }
+  if (!showCheckBox) {
+    attachedClasses = ['EmployeeTable__row'];
   }
 
-  onCheckBoxChange = (e) => {
-    let tmpEmployee = {
-      ...this.props.employee
-    }
-    delete tmpEmployee['Image'];
-    this.setState({ isSelected: e.target.checked });
-    this.props.handleCheckBox(e, tmpEmployee);
-  }
-
-  render() {
-    const { employee, showCheckBox } = this.props;
-    let attachedClasses = ['EmployeeTable__row'];
-    let renderItems = [];
-
-    if (this.state.isSelected) {
-      attachedClasses.push('EmployeeTable__row--selected');
-    }
-
-    if (!showCheckBox) {
-      attachedClasses = ['EmployeeTable__row'];
-    }
-
-    for (const key in employee) {
-      if (employee.hasOwnProperty(key)) {
-        const data = employee[key];
-        if (key === 'Image') {
-          renderItems.push(
-            <div key='data' className='EmployeeTable__row--Image'>
-              <img src={data} alt="img" />
-            </div>
-          )
-          continue;
-        }
+  for (const key in employee) {
+    if (employee.hasOwnProperty(key)) {
+      const data = employee[key];
+      if (key === 'Image') {
         renderItems.push(
-          <div key={data} className='EmployeeTable__row--item'>
-            <div className={`EmployeeTable__row--${key.split(' ').join('')}`}>
-              {data}
-            </div>
+          <div key='data' className='EmployeeTable__row--Image'>
+            <img src={data} alt="img" />
           </div>
         )
+        continue;
       }
-    }
-
-    return (
-      <div className={attachedClasses.join(' ')}>
-        {showCheckBox && (
-          <div className='EmployeeTable__row--checkbox'>
-            <Checkbox onChange={this.onCheckBoxChange} />
+      renderItems.push(
+        <div key={data} className='EmployeeTable__row--item'>
+          <div className={`EmployeeTable__row--${key.split(' ').join('')}`}>
+            {data}
           </div>
-        )}
-        {renderItems}
-      </div>
-    )
+        </div>
+      )
+    }
   }
+
+  const onCheckBoxChange = (e) => {
+    handleCheckBox(e, employee['Employee ID']);
+  }
+
+  return (
+    <div className={attachedClasses.join(' ')}>
+      {showCheckBox && (
+        <div className='EmployeeTable__row--checkbox'>
+          <Checkbox onChange={onCheckBoxChange} checked={isSelected} />
+        </div>
+      )}
+      {renderItems}
+    </div>
+  )
 }
 
 export default EmployeeTableRow;

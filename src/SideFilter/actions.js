@@ -20,22 +20,29 @@ const fetchSelectFail = (error) => ({
   error
 });
 
-export const fetchSelect = () => async dispatch => {
+export const fetchSelect = () => async (dispatch, getState) => {
   dispatch(fetchSelectStart());
-  try {
-    const baseUrl = 'https://5d4908df2d59e50014f20f04.mockapi.io/employee-list/';
-    const positionsJson = await fetch(`${baseUrl}positions`);
-    const departmentsJson = await fetch(`${baseUrl}departments`);
 
-    const positions = await positionsJson.json();
-    const departments = await departmentsJson.json();
+  const { SideFilter: { positions, departments } } = getState();
 
-    dispatch(fetchSelectSucceed({
-      positions,
-      departments
-    }));
-  } catch (error) {
-    dispatch(fetchSelectFail(error));
+  if (positions.length === 0 && departments.length === 0) {
+    try {
+      const baseUrl = 'https://5d4908df2d59e50014f20f04.mockapi.io/employee-list/';
+      const positionsJson = await fetch(`${baseUrl}positions`);
+      const departmentsJson = await fetch(`${baseUrl}departments`);
+
+      const positions = await positionsJson.json();
+      const departments = await departmentsJson.json();
+
+      dispatch(fetchSelectSucceed({
+        positions,
+        departments
+      }));
+    } catch (error) {
+      dispatch(fetchSelectFail(error));
+    }
+  } else {
+    dispatch(fetchSelectSucceed({ positions, departments }));
   }
 }
 

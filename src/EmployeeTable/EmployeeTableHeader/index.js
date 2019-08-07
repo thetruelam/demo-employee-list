@@ -1,15 +1,15 @@
 import React from 'react';
-// import { Checkbox } from 'antd';
+import { Checkbox } from 'antd';
 
 const EmployeeTableHeader = ({ fields, showCheckBox, toggleSelectAll, isSelectAll }) => {
   return (
     <div className='EmployeeTable__header'>
       {showCheckBox && (
         <div className='EmployeeTable__header--checkbox'>
-          {/* <Checkbox
+          <Checkbox
             onChange={toggleSelectAll}
             checked={isSelectAll}
-          >All</Checkbox> */}
+          >All</Checkbox>
         </div>
       )}
       {fields.map(field => (

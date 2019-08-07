@@ -5,7 +5,7 @@ import './style.scss';
 import EmployeeTableHeader from './EmployeeTableHeader';
 import EmployeeTableRow from './EmployeeTableRow';
 import Spinner from '../Spinner';
-import { fetchEmployees, selectColumn, unselectColumn, selectAll, unselectAll } from './actions';
+import { fetchEmployees, toggleSelectAll, toggleSelectOneRow } from './actions';
 import Aux from '../hoc/A';
 
 class EmployeeTable extends React.Component {
@@ -13,22 +13,12 @@ class EmployeeTable extends React.Component {
     this.props.fetchEmployees();
   }
 
-  handleCheckBox = (e, employee) => {
-    if (e.target.checked) {
-      this.props.selectColumn(employee);
-    } else {
-      this.props.unselectColumn(employee);
-    }
+  handleCheckBox = (e, employeeId) => {
+    this.props.toggleSelectOneRow(employeeId);
   }
 
-  toggleSelectAll = (e) => {
-    if (e.target.checked) {
-      this.props.selectAll();
-      console.log('checked')
-    } else {
-      this.props.unselectAll();
-      console.log('unchecked')
-    }
+  toggleSelectAll = () => {
+    this.props.toggleSelectAll();
   }
 
   render() {
@@ -42,19 +32,20 @@ class EmployeeTable extends React.Component {
         </div>
       )
     } else if (employees && employees.length > 0) {
-      let fields = Object.keys(employees[0]);
+      let fields = Object.keys(employees[0].data);
       let renderEmployees = employees;
 
       if (isFilter) {
         renderEmployees = renderEmployees.filter(employee => {
           let check = true;
-          if (filters.name !== '' && !employee['Name'].match(new RegExp(filters.name, 'gi')))
+          const { data } = employee;
+          if (filters.name !== '' && !data['Name'].match(new RegExp(filters.name, 'gi')))
             check = false;
-          if (filters.employeeid !== '' && !employee['Employee ID'].match(new RegExp(filters.employeeid, 'gi')))
+          if (filters.employeeid !== '' && !data['Employee ID'].match(new RegExp(filters.employeeid, 'gi')))
             check = false;
-          if (filters.positions !== 'Any' && filters.positions !== employee['Position'])
+          if (filters.positions !== 'Any' && filters.positions !== data['Position'])
             check = false;
-          if (filters.departments !== 'Any' && filters.departments !== employee['Department'])
+          if (filters.departments !== 'Any' && filters.departments !== data['Department'])
             check = false;
 
           return check;
@@ -71,10 +62,11 @@ class EmployeeTable extends React.Component {
           />
           {renderEmployees.map(employee => (
             <EmployeeTableRow
-              key={employee['Employee ID']}
-              employee={employee}
+              key={employee.data['Employee ID']}
+              employee={employee.data}
               showCheckBox={isSelectColumns}
               handleCheckBox={this.handleCheckBox}
+              isSelected={employee.isSelected}
             />
           ))}
         </Aux>
@@ -100,10 +92,8 @@ const mapState = state => ({
 
 const mapDispatch = dispatch => ({
   fetchEmployees: () => dispatch(fetchEmployees()),
-  selectColumn: (employee) => dispatch(selectColumn(employee)),
-  unselectColumn: (employee) => dispatch(unselectColumn(employee)),
-  selectAll: () => dispatch(selectAll()),
-  unselectAll: () => dispatch(unselectAll())
+  toggleSelectOneRow: (employeeId) => dispatch(toggleSelectOneRow(employeeId)),
+  toggleSelectAll: () => dispatch(toggleSelectAll())
 });
 
 export default connect(

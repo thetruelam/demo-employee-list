@@ -6,7 +6,6 @@ const initState = {
   error: '',
   isSelectColumns: false,
   isSelectAll: false,
-  selectedEmployees: []
 }
 
 const fetchEmployeesStart = (state, action) => {
@@ -17,10 +16,16 @@ const fetchEmployeesStart = (state, action) => {
 }
 
 const fetchEmployeesSucceed = (state, action) => {
+  const listEmployees = action.listEmployees.map(employee => ({
+    data: {
+      ...employee
+    },
+    isSelected: false
+  }))
   return {
     ...state,
     isFetching: false,
-    listEmployees: action.listEmployees
+    listEmployees
   }
 }
 
@@ -39,71 +44,56 @@ const toggleSelectColumns = (state, action) => {
   }
 
   if (state.isSelectColumns) {
-    updateState.selectedEmployees = []
+    updateState.listEmployees.map(row => ({
+      ...row,
+      isSelected: false
+    }));
   }
 
   return updateState;
 }
 
-const selectColumn = (state, action) => {
-  let isSelectAll = false;
-  let selectedEmployees = [...state.selectedEmployees]
-
-  selectedEmployees.push(action.employee);
-  if (selectedEmployees.length === state.listEmployees.length) {
-    isSelectAll = true;
-  }
-  return {
-    ...state,
-    selectedEmployees,
-    isSelectAll
-  }
-}
-
-const unselectColumn = (state, action) => {
-  let selectedEmployees = state.selectedEmployees.filter(
-    employee => employee['Employee ID'] !== action.employee['Employee ID']
-  );
-  return {
-    ...state,
-    selectedEmployees,
-    isSelectAll: false
-  }
-}
-
-const selectAll = (state, action) => {
-  let selectedEmployees = state.listEmployees.map(employee => {
-    let newEm = { ...employee };
-    delete newEm['Image'];
-    return newEm;
+const toggleSelectOneRow = (state, action) => {
+  const { employeeId } = action;
+  let isSelectAll = true;
+  let listEmployees = state.listEmployees.map(row => {
+    const { data, isSelected } = row;
+    const updateRow = { ...row };
+    if (employeeId === data['Employee ID']) {
+      updateRow.isSelected = !isSelected;
+    }
+    if (!updateRow.isSelected) {
+      isSelectAll = false;
+    }
+    return updateRow;
   });
 
   return {
     ...state,
-    selectedEmployees,
-    isSelectAll: true
+    listEmployees,
+    isSelectAll
   }
 }
 
-const unselectAll = (state, action) => {
+const toggleSelectAll = (state, action) => {
+  const { isSelectAll } = state;
+  const listEmployees = state.listEmployees.map(row => ({
+    ...row,
+    isSelected: !isSelectAll
+  }))
+
   return {
     ...state,
-    selectedEmployees: [],
-    isSelectAll: false
+    listEmployees,
+    isSelectAll: !isSelectAll
   }
 }
 
 const deleteEmployees = (state, action) => {
-  let filterArray = [...state.selectedEmployees];
-  let listEmployees = state.listEmployees.filter(
-    e => filterArray.findIndex(
-      _e => e['Employee ID'] === _e['Employee ID']
-    ) === -1
-  );
+  const listEmployees = state.listEmployees.filter(row => !row.isSelected);
   return {
     ...state,
-    listEmployees,
-    selectedEmployees: []
+    listEmployees
   }
 }
 
@@ -132,14 +122,10 @@ const EmployeeTable = (state = initState, action) => {
       return fetchEmployeesFail(state, action);
     case actionsType.TOGGLE_SELECT_COLUMNS:
       return toggleSelectColumns(state, action);
-    case actionsType.SELECT_COLUMN:
-      return selectColumn(state, action);
-    case actionsType.UNSELECT_COLUMN:
-      return unselectColumn(state, action);
-    case actionsType.SELECT_ALL:
-      return selectAll(state, action);
-    case actionsType.UNSELECT_ALL:
-      return unselectAll(state, action);
+    case actionsType.TOGGLE_SELECT_ONE_ROW:
+      return toggleSelectOneRow(state, action);
+    case actionsType.TOGGLE_SELECT_ALL:
+      return toggleSelectAll(state, action);
     case actionsType.DELETE_EMPLOYEES:
       return deleteEmployees(state, action);
     case actionsType.DOWNLOAD_EMPLOYEES_START:

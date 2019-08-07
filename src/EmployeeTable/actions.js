@@ -20,13 +20,21 @@ const fetchEmployeesSucceed = (listEmployees) => ({
   listEmployees
 });
 
-export const fetchEmployees = () => dispatch => {
+export const fetchEmployees = () => async (dispatch, getState) => {
   dispatch(fetchEmployeesStart());
+  const { EmployeeTable: { listEmployees } } = getState();
 
-  fetch('https://5d4908df2d59e50014f20f04.mockapi.io/employee-list/employees')
-    .then(res => res.json())
-    .then(listEmployees => dispatch(fetchEmployeesSucceed(listEmployees)))
-    .catch(error => dispatch(fetchEmployeesFail(error)));
+  if (listEmployees.length === 0) {
+    try {
+      const dataJson = await fetch('https://5d4908df2d59e50014f20f04.mockapi.io/employee-list/employees');
+      const listEmployees = await dataJson.json();
+      dispatch(fetchEmployeesSucceed(listEmployees));
+    } catch (error) {
+      dispatch(fetchEmployeesFail(error));
+    }
+  } else {
+    dispatch(fetchEmployeesSucceed(listEmployees));
+  }
 }
 
 /**
@@ -58,22 +66,13 @@ export const deleteEmployees = () => ({
  * select column
  */
 
-export const selectColumn = (employee) => ({
-  type: actionsType.SELECT_COLUMN,
-  employee
+export const toggleSelectOneRow = (employeeId) => ({
+  type: actionsType.TOGGLE_SELECT_ONE_ROW,
+  employeeId
 });
 
-export const unselectColumn = (employee) => ({
-  type: actionsType.UNSELECT_COLUMN,
-  employee
-});
-
-export const selectAll = () => ({
-  type: actionsType.SELECT_ALL
-});
-
-export const unselectAll = () => ({
-  type: actionsType.UNSELECT_ALL
+export const toggleSelectAll = () => ({
+  type: actionsType.TOGGLE_SELECT_ALL
 });
 
 /**
@@ -95,14 +94,8 @@ const downloadEmployeesFail = (error) => ({
 export const downloadEmployees = () => async (dispatch, getState) => {
   dispatch(downloadEmployeesStart());
   try {
-    // const { EmployeeTable: { listEmployees } } = getState();
-    const { EmployeeTable: { selectedEmployees } } = getState();
-    // const exportData = listEmployees.map(employee => {
-    //   const newEmployee = { ...employee }
-    //   delete newEmployee['Image'];
-    //   return newEmployee;
-    // });
-    const exportData = [...selectedEmployees];
+    const { EmployeeTable: { listEmployees } } = getState();
+    const exportData = [...listEmployees];
 
     if (exportData.length > 0) {
       const fields = Object.keys(exportData[0]);
@@ -110,7 +103,7 @@ export const downloadEmployees = () => async (dispatch, getState) => {
       const csv = await parseAsync(exportData, opts);
       // console.log(csv);
       dispatch(downloadEmployeesSucceed());
-      // dispatch(unselectAll());
+      // dispatch(toggleSelectAll());
       return csv;
     } else {
       dispatch(downloadEmployeesFail('There are no employees to export'));

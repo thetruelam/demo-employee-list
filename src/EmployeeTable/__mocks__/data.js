@@ -17,7 +17,7 @@ export default [
   },
   {
     "Image": "https://cdn.myanimelist.net/images/characters/11/366718.jpg",
-    "Name": "Bonnie J. Bell",
+    "Name": "Bonnie Bell",
     "Employee ID": "833425",
     "Position": "Operations Trainee",
     "Department": "Operations",
@@ -25,7 +25,7 @@ export default [
   },
   {
     "Image": "https://cdn.myanimelist.net/images/characters/3/366720.jpg",
-    "Name": "Michael T. Hart",
+    "Name": "Michael Hart",
     "Employee ID": "342325235",
     "Position": "Assitant Operations Manager",
     "Department": "Operations",
@@ -33,7 +33,7 @@ export default [
   },
   {
     "Image": "https://cdn.myanimelist.net/images/characters/5/366719.jpg",
-    "Name": "Michael M. Edwards",
+    "Name": "Michael Edwards",
     "Employee ID": "11432134932",
     "Position": "Operations Trainee",
     "Department": "Operations",
@@ -41,7 +41,7 @@ export default [
   },
   {
     "Image": "https://cdn.myanimelist.net/images/characters/10/268173.jpg",
-    "Name": "John R. Lax",
+    "Name": "John Lax",
     "Employee ID": "8989377780",
     "Position": "Operations Trainee",
     "Department": "Operations",
@@ -49,7 +49,7 @@ export default [
   },
   {
     "Image": "https://cdn.myanimelist.net/images/characters/9/311327.jpg",
-    "Name": "Raymond T. Koehler",
+    "Name": "Raymond Koehler",
     "Employee ID": "1343245431",
     "Position": "Operations Trainee",
     "Department": "Operations",
@@ -57,7 +57,7 @@ export default [
   },
   {
     "Image": "https://cdn.myanimelist.net/images/characters/7/303689.jpg",
-    "Name": "Carol B. Mortimer",
+    "Name": "Carol Mortimer",
     "Employee ID": "90482582048",
     "Position": "Operations Trainee",
     "Department": "Operations",
@@ -65,7 +65,7 @@ export default [
   },
   {
     "Image": "https://cdn.myanimelist.net/images/characters/11/365839.jpg",
-    "Name": "Eva J. Galloway",
+    "Name": "Eva Galloway",
     "Employee ID": "38579432759",
     "Position": "Operations Trainee",
     "Department": "Operations",
@@ -73,12 +73,815 @@ export default [
   },
   {
     "Image": "https://cdn.myanimelist.net/images/characters/13/268211.jpg",
-    "Name": "Linda R. Spikes",
+    "Name": "Linda Spikes",
     "Employee ID": "2543261436",
     "Position": "Operations Trainee",
     "Department": "Operations",
     "Email": "LindaRSpikes@rhyta.com"
   },
+]
+
+export const details = [
+  {
+    "Image": "https://i.pinimg.com/originals/0c/2f/47/0c2f4741b436c1ddcf73e02e1aea572e.jpg",
+    "Name": "Jerry Seinfeld",
+    "id": "914037",
+    "Position": "Chief Financial Officer",
+    "Department": "Head Office",
+    "Email": "jerry.seinfeld@penske.com",
+    "Open Issues": 42548,
+    "Last Login": "2019-07-04T10:05:59.074Z",
+    "Sites": 5808,
+    "Inspections": [
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN321",
+        "Date": "2019-05-11T22:20:36.203Z",
+        "Durations": 93
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN322",
+        "Date": "2018-09-08T02:26:52.189Z",
+        "Durations": 5
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN323",
+        "Date": "2018-12-22T03:11:10.454Z",
+        "Durations": 66
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN324",
+        "Date": "2019-01-19T06:07:32.535Z",
+        "Durations": 41
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN325",
+        "Date": "2019-05-09T12:53:58.399Z",
+        "Durations": 24
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN326",
+        "Date": "2018-10-08T14:36:52.826Z",
+        "Durations": 50
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN327",
+        "Date": "2019-06-30T18:39:45.543Z",
+        "Durations": 45
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN328",
+        "Date": "2019-01-01T07:00:22.298Z",
+        "Durations": 49
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN329",
+        "Date": "2018-09-18T09:56:59.035Z",
+        "Durations": 39
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN3210",
+        "Date": "2018-11-17T09:34:44.148Z",
+        "Durations": 22
+      }
+    ]
+  },
+  {
+    "Image": "https://cdn.myanimelist.net/images/characters/16/378953.jpg",
+    "Name": "Cosmo Kramper",
+    "id": "900345",
+    "Position": "Operations Manager",
+    "Department": "Operations",
+    "Email": "ScottFCalhoun@dayrep.com",
+    "Open Issues": 425,
+    "Sites": 58,
+    "Last Login": "2019-06-04T02:17:28.021Z",
+    "Inspections": [
+      {
+        "id": "1",
+        "Checklist": "Control Demo V2",
+        "ID": "PN321",
+        "Date": "2019-05-11T22:20:36.203Z",
+        "Durations": 93
+      },
+      {
+        "id": "2",
+        "Checklist": "Control Demo V2",
+        "ID": "PN322",
+        "Date": "2018-09-08T02:26:52.189Z",
+        "Durations": 5
+      },
+      {
+        "id": "3",
+        "Checklist": "Control Demo V2",
+        "ID": "PN323",
+        "Date": "2018-12-22T03:11:10.454Z",
+        "Durations": 66
+      },
+      {
+        "id": "4",
+        "Checklist": "Control Demo V2",
+        "ID": "PN324",
+        "Date": "2019-01-19T06:07:32.535Z",
+        "Durations": 41
+      },
+      {
+        "id": "5",
+        "Checklist": "Control Demo V2",
+        "ID": "PN325",
+        "Date": "2019-05-09T12:53:58.399Z",
+        "Durations": 24
+      },
+      {
+        "id": "6",
+        "Checklist": "Control Demo V2",
+        "ID": "PN326",
+        "Date": "2018-10-08T14:36:52.826Z",
+        "Durations": 50
+      },
+      {
+        "id": "7",
+        "Checklist": "Control Demo V2",
+        "ID": "PN327",
+        "Date": "2019-06-30T18:39:45.543Z",
+        "Durations": 45
+      },
+      {
+        "id": "8",
+        "Checklist": "Control Demo V2",
+        "ID": "PN328",
+        "Date": "2019-01-01T07:00:22.298Z",
+        "Durations": 49
+      },
+      {
+        "id": "9",
+        "Checklist": "Control Demo V2",
+        "ID": "PN329",
+        "Date": "2018-09-18T09:56:59.035Z",
+        "Durations": 39
+      },
+      {
+        "id": "10",
+        "Checklist": "Control Demo V2",
+        "ID": "PN3210",
+        "Date": "2018-11-17T09:34:44.148Z",
+        "Durations": 22
+      }
+    ]
+  },
+  {
+    "Image": "https://cdn.myanimelist.net/images/characters/11/366718.jpg",
+    "Name": "Bonnie Bell",
+    "id": "833425",
+    "Position": "Operations Trainee",
+    "Department": "Operations",
+    "Email": "BonnieJBell@teleworm.us",
+    "Open Issues": 424525,
+    "Last Login": "2019-07-03T11:59:39.052Z",
+    "Sites": 5324234,
+    "Inspections": [
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN321",
+        "Date": "2019-05-11T22:20:36.203Z",
+        "Durations": 93
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN322",
+        "Date": "2018-09-08T02:26:52.189Z",
+        "Durations": 5
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN323",
+        "Date": "2018-12-22T03:11:10.454Z",
+        "Durations": 66
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN324",
+        "Date": "2019-01-19T06:07:32.535Z",
+        "Durations": 41
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN325",
+        "Date": "2019-05-09T12:53:58.399Z",
+        "Durations": 24
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN326",
+        "Date": "2018-10-08T14:36:52.826Z",
+        "Durations": 50
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN327",
+        "Date": "2019-06-30T18:39:45.543Z",
+        "Durations": 45
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN328",
+        "Date": "2019-01-01T07:00:22.298Z",
+        "Durations": 49
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN329",
+        "Date": "2018-09-18T09:56:59.035Z",
+        "Durations": 39
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN3210",
+        "Date": "2018-11-17T09:34:44.148Z",
+        "Durations": 22
+      }
+    ]
+  },
+  {
+    "Image": "https://cdn.myanimelist.net/images/characters/3/366720.jpg",
+    "Name": "Michael Hart",
+    "id": "342325235",
+    "Position": "Assitant Operations Manager",
+    "Department": "Operations",
+    "Email": "MichaelTHart@armyspy.com",
+    "Last Login": "2019-04-17T01:22:40.138Z",
+    "Open Issues": 35229,
+    "Sites": 8615,
+    "Inspections": [
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN321",
+        "Date": "2019-05-11T22:20:36.203Z",
+        "Durations": 93
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN322",
+        "Date": "2018-09-08T02:26:52.189Z",
+        "Durations": 5
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN323",
+        "Date": "2018-12-22T03:11:10.454Z",
+        "Durations": 66
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN324",
+        "Date": "2019-01-19T06:07:32.535Z",
+        "Durations": 41
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN325",
+        "Date": "2019-05-09T12:53:58.399Z",
+        "Durations": 24
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN326",
+        "Date": "2018-10-08T14:36:52.826Z",
+        "Durations": 50
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN327",
+        "Date": "2019-06-30T18:39:45.543Z",
+        "Durations": 45
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN328",
+        "Date": "2019-01-01T07:00:22.298Z",
+        "Durations": 49
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN329",
+        "Date": "2018-09-18T09:56:59.035Z",
+        "Durations": 39
+      },
+      {
+        "Checklist": "Control Demo V2",
+        "ID": "PN3210",
+        "Date": "2018-11-17T09:34:44.148Z",
+        "Durations": 22
+      }
+    ]
+  },
+  {
+    "Image": "https://cdn.myanimelist.net/images/characters/5/366719.jpg",
+    "Name": "Michael Edwards",
+    "id": "11432134932",
+    "Position": "Operations Trainee",
+    "Department": "Operations",
+    "Email": "MichaelMEdwards@armyspy.com",
+    "Last Login": "2018-08-24T12:55:53.334Z",
+    "Open Issues": 23195,
+    "Sites": 38622,
+    "Inspections": [
+      {
+        "id": "1",
+        "Checklist": "Control Demo V2",
+        "ID": "PN321",
+        "Date": "2019-05-11T22:20:36.203Z",
+        "Durations": 93
+      },
+      {
+        "id": "2",
+        "Checklist": "Control Demo V2",
+        "ID": "PN322",
+        "Date": "2018-09-08T02:26:52.189Z",
+        "Durations": 5
+      },
+      {
+        "id": "3",
+        "Checklist": "Control Demo V2",
+        "ID": "PN323",
+        "Date": "2018-12-22T03:11:10.454Z",
+        "Durations": 66
+      },
+      {
+        "id": "4",
+        "Checklist": "Control Demo V2",
+        "ID": "PN324",
+        "Date": "2019-01-19T06:07:32.535Z",
+        "Durations": 41
+      },
+      {
+        "id": "5",
+        "Checklist": "Control Demo V2",
+        "ID": "PN325",
+        "Date": "2019-05-09T12:53:58.399Z",
+        "Durations": 24
+      },
+      {
+        "id": "6",
+        "Checklist": "Control Demo V2",
+        "ID": "PN326",
+        "Date": "2018-10-08T14:36:52.826Z",
+        "Durations": 50
+      },
+      {
+        "id": "7",
+        "Checklist": "Control Demo V2",
+        "ID": "PN327",
+        "Date": "2019-06-30T18:39:45.543Z",
+        "Durations": 45
+      },
+      {
+        "id": "8",
+        "Checklist": "Control Demo V2",
+        "ID": "PN328",
+        "Date": "2019-01-01T07:00:22.298Z",
+        "Durations": 49
+      },
+      {
+        "id": "9",
+        "Checklist": "Control Demo V2",
+        "ID": "PN329",
+        "Date": "2018-09-18T09:56:59.035Z",
+        "Durations": 39
+      },
+      {
+        "id": "10",
+        "Checklist": "Control Demo V2",
+        "ID": "PN3210",
+        "Date": "2018-11-17T09:34:44.148Z",
+        "Durations": 22
+      }
+    ]
+  },
+  {
+    "Image": "https://cdn.myanimelist.net/images/characters/10/268173.jpg",
+    "Name": "John Lax",
+    "id": "8989377780",
+    "Position": "Operations Trainee",
+    "Department": "Operations",
+    "Email": "JohnRLax@jourrapide.com",
+    "Last Login": "2018-10-29T04:57:34.035Z",
+    "Open Issues": 48138,
+    "Sites": 46283,
+    "Inspections": [
+      {
+        "id": "1",
+        "Checklist": "Control Demo V2",
+        "ID": "PN321",
+        "Date": "2019-05-11T22:20:36.203Z",
+        "Durations": 93
+      },
+      {
+        "id": "2",
+        "Checklist": "Control Demo V2",
+        "ID": "PN322",
+        "Date": "2018-09-08T02:26:52.189Z",
+        "Durations": 5
+      },
+      {
+        "id": "3",
+        "Checklist": "Control Demo V2",
+        "ID": "PN323",
+        "Date": "2018-12-22T03:11:10.454Z",
+        "Durations": 66
+      },
+      {
+        "id": "4",
+        "Checklist": "Control Demo V2",
+        "ID": "PN324",
+        "Date": "2019-01-19T06:07:32.535Z",
+        "Durations": 41
+      },
+      {
+        "id": "5",
+        "Checklist": "Control Demo V2",
+        "ID": "PN325",
+        "Date": "2019-05-09T12:53:58.399Z",
+        "Durations": 24
+      },
+      {
+        "id": "6",
+        "Checklist": "Control Demo V2",
+        "ID": "PN326",
+        "Date": "2018-10-08T14:36:52.826Z",
+        "Durations": 50
+      },
+      {
+        "id": "7",
+        "Checklist": "Control Demo V2",
+        "ID": "PN327",
+        "Date": "2019-06-30T18:39:45.543Z",
+        "Durations": 45
+      },
+      {
+        "id": "8",
+        "Checklist": "Control Demo V2",
+        "ID": "PN328",
+        "Date": "2019-01-01T07:00:22.298Z",
+        "Durations": 49
+      },
+      {
+        "id": "9",
+        "Checklist": "Control Demo V2",
+        "ID": "PN329",
+        "Date": "2018-09-18T09:56:59.035Z",
+        "Durations": 39
+      },
+      {
+        "id": "10",
+        "Checklist": "Control Demo V2",
+        "ID": "PN3210",
+        "Date": "2018-11-17T09:34:44.148Z",
+        "Durations": 22
+      }
+    ]
+  },
+  {
+    "Image": "https://cdn.myanimelist.net/images/characters/9/311327.jpg",
+    "Name": "Raymond Koehler",
+    "id": "1343245431",
+    "Position": "Operations Trainee",
+    "Department": "Operations",
+    "Email": "RaymondTKoehler@rhyta.com",
+    "Last Login": "2018-09-20T04:24:12.965Z",
+    "Open Issues": 27791,
+    "Sites": 41988,
+    "Inspections": [
+      {
+        "id": "1",
+        "Checklist": "Control Demo V2",
+        "ID": "PN321",
+        "Date": "2019-05-11T22:20:36.203Z",
+        "Durations": 93
+      },
+      {
+        "id": "2",
+        "Checklist": "Control Demo V2",
+        "ID": "PN322",
+        "Date": "2018-09-08T02:26:52.189Z",
+        "Durations": 5
+      },
+      {
+        "id": "3",
+        "Checklist": "Control Demo V2",
+        "ID": "PN323",
+        "Date": "2018-12-22T03:11:10.454Z",
+        "Durations": 66
+      },
+      {
+        "id": "4",
+        "Checklist": "Control Demo V2",
+        "ID": "PN324",
+        "Date": "2019-01-19T06:07:32.535Z",
+        "Durations": 41
+      },
+      {
+        "id": "5",
+        "Checklist": "Control Demo V2",
+        "ID": "PN325",
+        "Date": "2019-05-09T12:53:58.399Z",
+        "Durations": 24
+      },
+      {
+        "id": "6",
+        "Checklist": "Control Demo V2",
+        "ID": "PN326",
+        "Date": "2018-10-08T14:36:52.826Z",
+        "Durations": 50
+      },
+      {
+        "id": "7",
+        "Checklist": "Control Demo V2",
+        "ID": "PN327",
+        "Date": "2019-06-30T18:39:45.543Z",
+        "Durations": 45
+      },
+      {
+        "id": "8",
+        "Checklist": "Control Demo V2",
+        "ID": "PN328",
+        "Date": "2019-01-01T07:00:22.298Z",
+        "Durations": 49
+      },
+      {
+        "id": "9",
+        "Checklist": "Control Demo V2",
+        "ID": "PN329",
+        "Date": "2018-09-18T09:56:59.035Z",
+        "Durations": 39
+      },
+      {
+        "id": "10",
+        "Checklist": "Control Demo V2",
+        "ID": "PN3210",
+        "Date": "2018-11-17T09:34:44.148Z",
+        "Durations": 22
+      }
+    ]
+  },
+  {
+    "Image": "https://cdn.myanimelist.net/images/characters/7/303689.jpg",
+    "Name": "Carol Mortimer",
+    "id": "90482582048",
+    "Position": "Operations Trainee",
+    "Department": "Operations",
+    "Email": "CarolBMortimer@rhyta.com",
+    "Last Login": "2018-12-16T04:46:20.804Z",
+    "Open Issues": 82448,
+    "Sites": 69717,
+    "Inspections": [
+      {
+        "id": "1",
+        "Checklist": "Control Demo V2",
+        "ID": "PN321",
+        "Date": "2019-05-11T22:20:36.203Z",
+        "Durations": 93
+      },
+      {
+        "id": "2",
+        "Checklist": "Control Demo V2",
+        "ID": "PN322",
+        "Date": "2018-09-08T02:26:52.189Z",
+        "Durations": 5
+      },
+      {
+        "id": "3",
+        "Checklist": "Control Demo V2",
+        "ID": "PN323",
+        "Date": "2018-12-22T03:11:10.454Z",
+        "Durations": 66
+      },
+      {
+        "id": "4",
+        "Checklist": "Control Demo V2",
+        "ID": "PN324",
+        "Date": "2019-01-19T06:07:32.535Z",
+        "Durations": 41
+      },
+      {
+        "id": "5",
+        "Checklist": "Control Demo V2",
+        "ID": "PN325",
+        "Date": "2019-05-09T12:53:58.399Z",
+        "Durations": 24
+      },
+      {
+        "id": "6",
+        "Checklist": "Control Demo V2",
+        "ID": "PN326",
+        "Date": "2018-10-08T14:36:52.826Z",
+        "Durations": 50
+      },
+      {
+        "id": "7",
+        "Checklist": "Control Demo V2",
+        "ID": "PN327",
+        "Date": "2019-06-30T18:39:45.543Z",
+        "Durations": 45
+      },
+      {
+        "id": "8",
+        "Checklist": "Control Demo V2",
+        "ID": "PN328",
+        "Date": "2019-01-01T07:00:22.298Z",
+        "Durations": 49
+      },
+      {
+        "id": "9",
+        "Checklist": "Control Demo V2",
+        "ID": "PN329",
+        "Date": "2018-09-18T09:56:59.035Z",
+        "Durations": 39
+      },
+      {
+        "id": "10",
+        "Checklist": "Control Demo V2",
+        "ID": "PN3210",
+        "Date": "2018-11-17T09:34:44.148Z",
+        "Durations": 22
+      }
+    ]
+  },
+  {
+    "Image": "https://cdn.myanimelist.net/images/characters/11/365839.jpg",
+    "Name": "Eva Galloway",
+    "id": "38579432759",
+    "Position": "Operations Trainee",
+    "Department": "Operations",
+    "Email": "EvaJGalloway@teleworm.us",
+    "Last Login": "2019-05-07T16:44:21.476Z",
+    "Open Issues": 60057,
+    "Sites": 74620,
+    "Inspections": [
+      {
+        "id": "1",
+        "Checklist": "Control Demo V2",
+        "ID": "PN321",
+        "Date": "2019-05-11T22:20:36.203Z",
+        "Durations": 93
+      },
+      {
+        "id": "2",
+        "Checklist": "Control Demo V2",
+        "ID": "PN322",
+        "Date": "2018-09-08T02:26:52.189Z",
+        "Durations": 5
+      },
+      {
+        "id": "3",
+        "Checklist": "Control Demo V2",
+        "ID": "PN323",
+        "Date": "2018-12-22T03:11:10.454Z",
+        "Durations": 66
+      },
+      {
+        "id": "4",
+        "Checklist": "Control Demo V2",
+        "ID": "PN324",
+        "Date": "2019-01-19T06:07:32.535Z",
+        "Durations": 41
+      },
+      {
+        "id": "5",
+        "Checklist": "Control Demo V2",
+        "ID": "PN325",
+        "Date": "2019-05-09T12:53:58.399Z",
+        "Durations": 24
+      },
+      {
+        "id": "6",
+        "Checklist": "Control Demo V2",
+        "ID": "PN326",
+        "Date": "2018-10-08T14:36:52.826Z",
+        "Durations": 50
+      },
+      {
+        "id": "7",
+        "Checklist": "Control Demo V2",
+        "ID": "PN327",
+        "Date": "2019-06-30T18:39:45.543Z",
+        "Durations": 45
+      },
+      {
+        "id": "8",
+        "Checklist": "Control Demo V2",
+        "ID": "PN328",
+        "Date": "2019-01-01T07:00:22.298Z",
+        "Durations": 49
+      },
+      {
+        "id": "9",
+        "Checklist": "Control Demo V2",
+        "ID": "PN329",
+        "Date": "2018-09-18T09:56:59.035Z",
+        "Durations": 39
+      },
+      {
+        "id": "10",
+        "Checklist": "Control Demo V2",
+        "ID": "PN3210",
+        "Date": "2018-11-17T09:34:44.148Z",
+        "Durations": 22
+      }
+    ]
+  },
+  {
+    "Image": "https://cdn.myanimelist.net/images/characters/13/268211.jpg",
+    "Name": "Linda Spikes",
+    "id": "2543261436",
+    "Position": "Operations Trainee",
+    "Department": "Operations",
+    "Email": "LindaRSpikes@rhyta.com",
+    "Last Login": "2019-03-13T06:11:52.868Z",
+    "Open Issues": 56837,
+    "Sites": 36983,
+    "Inspections": [
+      {
+        "id": "1",
+        "Checklist": "Control Demo V2",
+        "ID": "PN321",
+        "Date": "2019-05-11T22:20:36.203Z",
+        "Durations": 93
+      },
+      {
+        "id": "2",
+        "Checklist": "Control Demo V2",
+        "ID": "PN322",
+        "Date": "2018-09-08T02:26:52.189Z",
+        "Durations": 5
+      },
+      {
+        "id": "3",
+        "Checklist": "Control Demo V2",
+        "ID": "PN323",
+        "Date": "2018-12-22T03:11:10.454Z",
+        "Durations": 66
+      },
+      {
+        "id": "4",
+        "Checklist": "Control Demo V2",
+        "ID": "PN324",
+        "Date": "2019-01-19T06:07:32.535Z",
+        "Durations": 41
+      },
+      {
+        "id": "5",
+        "Checklist": "Control Demo V2",
+        "ID": "PN325",
+        "Date": "2019-05-09T12:53:58.399Z",
+        "Durations": 24
+      },
+      {
+        "id": "6",
+        "Checklist": "Control Demo V2",
+        "ID": "PN326",
+        "Date": "2018-10-08T14:36:52.826Z",
+        "Durations": 50
+      },
+      {
+        "id": "7",
+        "Checklist": "Control Demo V2",
+        "ID": "PN327",
+        "Date": "2019-06-30T18:39:45.543Z",
+        "Durations": 45
+      },
+      {
+        "id": "8",
+        "Checklist": "Control Demo V2",
+        "ID": "PN328",
+        "Date": "2019-01-01T07:00:22.298Z",
+        "Durations": 49
+      },
+      {
+        "id": "9",
+        "Checklist": "Control Demo V2",
+        "ID": "PN329",
+        "Date": "2018-09-18T09:56:59.035Z",
+        "Durations": 39
+      },
+      {
+        "id": "10",
+        "Checklist": "Control Demo V2",
+        "ID": "PN3210",
+        "Date": "2018-11-17T09:34:44.148Z",
+        "Durations": 22
+      }
+    ]
+  }
 ]
 
 export const positions = [

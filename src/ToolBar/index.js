@@ -123,7 +123,7 @@ const ToolBar = ({
 const mapState = state => ({
   employeesNumber: state.EmployeeTable.listEmployees.length,
   isSelectColumns: state.EmployeeTable.isSelectColumns,
-  selectedEmployeesNumber: state.EmployeeTable.selectedEmployees.length
+  selectedEmployeesNumber: state.EmployeeTable.listEmployees.filter(e => e.isSelected).length
 });
 
 const mapDispatch = dispatch => {
