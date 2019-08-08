@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import './style.scss';
 
 import EmployeeTableHeader from './EmployeeTableHeader';
@@ -19,6 +20,10 @@ class EmployeeTable extends React.Component {
 
   toggleSelectAll = () => {
     this.props.toggleSelectAll();
+  }
+
+  handleRowClick = (id) => {
+    this.props.history.push(`/employees/${id}`);
   }
 
   render() {
@@ -67,6 +72,7 @@ class EmployeeTable extends React.Component {
               showCheckBox={isSelectColumns}
               handleCheckBox={this.handleCheckBox}
               isSelected={employee.isSelected}
+              handleRowClick={this.handleRowClick}
             />
           ))}
         </Aux>
@@ -96,7 +102,9 @@ const mapDispatch = dispatch => ({
   toggleSelectAll: () => dispatch(toggleSelectAll())
 });
 
-export default connect(
-  mapState,
-  mapDispatch
-)(EmployeeTable);
+export default withRouter(
+  connect(
+    mapState,
+    mapDispatch
+  )(EmployeeTable)
+);

@@ -21,12 +21,12 @@ const fetchSelectFail = (error) => ({
 });
 
 export const fetchSelect = () => async (dispatch, getState) => {
-  dispatch(fetchSelectStart());
-
   const { SideFilter: { positions, departments } } = getState();
 
   if (positions.length === 0 && departments.length === 0) {
     try {
+      dispatch(fetchSelectStart());
+
       const baseUrl = 'https://5d4908df2d59e50014f20f04.mockapi.io/employee-list/';
       const positionsJson = await fetch(`${baseUrl}positions`);
       const departmentsJson = await fetch(`${baseUrl}departments`);
@@ -41,8 +41,6 @@ export const fetchSelect = () => async (dispatch, getState) => {
     } catch (error) {
       dispatch(fetchSelectFail(error));
     }
-  } else {
-    dispatch(fetchSelectSucceed({ positions, departments }));
   }
 }
 

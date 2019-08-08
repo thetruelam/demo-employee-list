@@ -1,7 +1,7 @@
 import React from 'react';
 import { Checkbox } from 'antd';
 
-const EmployeeTableRow = ({ employee, showCheckBox, isSelected, handleCheckBox }) => {
+const EmployeeTableRow = ({ handleRowClick, employee, showCheckBox, isSelected, handleCheckBox }) => {
   let attachedClasses = ['EmployeeTable__row'];
   let renderItems = [];
 
@@ -39,7 +39,7 @@ const EmployeeTableRow = ({ employee, showCheckBox, isSelected, handleCheckBox }
   }
 
   return (
-    <div className={attachedClasses.join(' ')}>
+    <div className={attachedClasses.join(' ')} onClick={() => handleRowClick(employee['Employee ID'])}>
       {showCheckBox && (
         <div className='EmployeeTable__row--checkbox'>
           <Checkbox onChange={onCheckBoxChange} checked={isSelected} />

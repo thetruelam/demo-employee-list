@@ -21,19 +21,19 @@ const fetchEmployeesSucceed = (listEmployees) => ({
 });
 
 export const fetchEmployees = () => async (dispatch, getState) => {
-  dispatch(fetchEmployeesStart());
   const { EmployeeTable: { listEmployees } } = getState();
 
   if (listEmployees.length === 0) {
     try {
+      dispatch(fetchEmployeesStart());
+
       const dataJson = await fetch('https://5d4908df2d59e50014f20f04.mockapi.io/employee-list/employees');
       const listEmployees = await dataJson.json();
+
       dispatch(fetchEmployeesSucceed(listEmployees));
     } catch (error) {
       dispatch(fetchEmployeesFail(error));
     }
-  } else {
-    dispatch(fetchEmployeesSucceed(listEmployees));
   }
 }
 
@@ -92,12 +92,12 @@ const downloadEmployeesFail = (error) => ({
 });
 
 export const downloadEmployees = () => async (dispatch, getState) => {
-  dispatch(downloadEmployeesStart());
   try {
     const { EmployeeTable: { listEmployees } } = getState();
     const exportData = [...listEmployees];
 
     if (exportData.length > 0) {
+      dispatch(downloadEmployeesStart());
       const fields = Object.keys(exportData[0]);
       const opts = { fields };
       const csv = await parseAsync(exportData, opts);

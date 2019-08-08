@@ -1,0 +1,27 @@
+.title {
+  text-align: left;
+  position: relative;
+  padding: 5px 0;
+  h2 {
+    color: #c71585;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+  }
+  &:before {
+    border-bottom: 3px solid #c71585;
+    left: 0;
+  }
+  &:after {
+    border-bottom: 3px solid #ff69b4;
+    left: 100px;
+    width: calc(100% - 100px);
+  }
+}

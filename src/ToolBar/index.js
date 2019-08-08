@@ -3,22 +3,28 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Modal, message } from 'antd';
 import fileDownload from 'react-file-download';
+import { withRouter } from 'react-router-dom';
 
 import classes from './style.module.scss';
 import { toggleSideFilter } from '../SideFilter/actions';
 import ToolBarButtonFilter from './ToolBarButtonFilter';
 import ToolBarButtonFeatures, { features } from './ToolBarButtonFeatures';
 import { toggleSelectColumns, deleteEmployees, downloadEmployees } from '../EmployeeTable/actions';
+import ToolBarBreadCrump from './ToolBarBreadCrump';
 
 const ToolBar = ({
+  location,
   employeesNumber,
   toggleSideFilter,
   toggleSelectColumns,
   isSelectColumns,
   selectedEmployeesNumber,
   deleteEmployees,
-  downloadEmployees
+  downloadEmployees,
+  employeeDetail
 }) => {
+  const locations = location.pathname.split('/').filter(i => i);
+
   const btnFilterOnClick = () => {
     toggleSideFilter();
   }
@@ -104,16 +110,17 @@ const ToolBar = ({
   return (
     <div className={classes.ToolBar}>
       <div className={classes.ToolBar__item}>
-        <h2 className={classes.ToolBar__BreadCrump}>Employees</h2>
-        <span className={classes.ToolBar__number}>{employeesNumber} Employees</span>
+        {/* <h2 className={classes.ToolBar__BreadCrump}>Employees</h2> */}
+        <ToolBarBreadCrump employeeDetail={employeeDetail} locations={locations} />
+        {locations.length === 1 && <span className={classes.ToolBar__number}>{employeesNumber} Employees</span>}
       </div>
       <div className={classes.ToolBar__item}>
-        {isSelectColumns && (
+        {locations.length === 1 && isSelectColumns && (
           <span className={classes.ToolBar__number}>
             {selectedEmployeesNumber} employees selected
           </span>
         )}
-        <ToolBarButtonFilter onClick={btnFilterOnClick} />
+        {locations.length === 1 && <ToolBarButtonFilter onClick={btnFilterOnClick} />}
         <ToolBarButtonFeatures onClick={handleFeaturesClick} />
       </div>
     </div>
@@ -123,7 +130,8 @@ const ToolBar = ({
 const mapState = state => ({
   employeesNumber: state.EmployeeTable.listEmployees.length,
   isSelectColumns: state.EmployeeTable.isSelectColumns,
-  selectedEmployeesNumber: state.EmployeeTable.listEmployees.filter(e => e.isSelected).length
+  selectedEmployeesNumber: state.EmployeeTable.listEmployees.filter(e => e.isSelected).length,
+  employeeDetail: state.EmployeeDetail.detail
 });
 
 const mapDispatch = dispatch => {
@@ -135,4 +143,4 @@ const mapDispatch = dispatch => {
   }
 }
 
-export default connect(mapState, mapDispatch)(ToolBar);
+export default withRouter(connect(mapState, mapDispatch)(ToolBar));

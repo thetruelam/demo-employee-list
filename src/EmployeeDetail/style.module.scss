@@ -1,0 +1,12 @@
+.EmployeeDetail {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  position: relative;
+  padding: 2rem 0;
+  &__spinner-wrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
