@@ -2,4 +2,4 @@
 ## To run local
 * `npm install`
 * `npm start`
-## Live demo: [here](http://demo-employee-list.s3-website.us-east-2.amazonaws.com/employees)
+## Live demo: [here](http://demo-employee-list.s3-website.us-east-2.amazonaws.com/employees){:target="_blank"}
