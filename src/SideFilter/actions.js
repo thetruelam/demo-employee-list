@@ -1,3 +1,5 @@
+import { setError } from "../withErrorHandler/actions";
+
 export const TOGGLE_SIDE_FILTER = 'TOGGLE_SIDE_FILTER';
 export const toggleSideFilter = () => ({
   type: TOGGLE_SIDE_FILTER
@@ -40,6 +42,7 @@ export const fetchSelect = () => async (dispatch, getState) => {
       }));
     } catch (error) {
       dispatch(fetchSelectFail(error));
+      dispatch(setError(error));
     }
   }
 }

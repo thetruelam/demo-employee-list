@@ -92,6 +92,8 @@ export const details = [
     "Open Issues": 42548,
     "Last Login": "2019-07-04T10:05:59.074Z",
     "Sites": 5808,
+    "Phone": "(123) 922-4976",
+    "Password": "uH7KCKPtZUoVwRF",
     "Inspections": [
       {
         "Checklist": "Control Demo V2",
@@ -165,6 +167,8 @@ export const details = [
     "Open Issues": 425,
     "Sites": 58,
     "Last Login": "2019-06-04T02:17:28.021Z",
+    "Phone": "184-490-2956",
+    "Password": "uH7KCKPtZUoVwRF",
     "Inspections": [
       {
         "id": "1",
@@ -248,6 +252,8 @@ export const details = [
     "Open Issues": 424525,
     "Last Login": "2019-07-03T11:59:39.052Z",
     "Sites": 5324234,
+    "Phone": "053.127.0068",
+    "Password": "uH7KCKPtZUoVwRF",
     "Inspections": [
       {
         "Checklist": "Control Demo V2",
@@ -321,6 +327,8 @@ export const details = [
     "Last Login": "2019-04-17T01:22:40.138Z",
     "Open Issues": 35229,
     "Sites": 8615,
+    "Phone": "031-022-4078",
+    "Password": "uH7KCKPtZUoVwRF",
     "Inspections": [
       {
         "Checklist": "Control Demo V2",
@@ -394,6 +402,8 @@ export const details = [
     "Last Login": "2018-08-24T12:55:53.334Z",
     "Open Issues": 23195,
     "Sites": 38622,
+    "Phone": "861.562.1001",
+    "Password": "uH7KCKPtZUoVwRF",
     "Inspections": [
       {
         "id": "1",
@@ -477,6 +487,8 @@ export const details = [
     "Last Login": "2018-10-29T04:57:34.035Z",
     "Open Issues": 48138,
     "Sites": 46283,
+    "Phone": "354.489.1382",
+    "Password": "uH7KCKPtZUoVwRF",
     "Inspections": [
       {
         "id": "1",
@@ -560,6 +572,8 @@ export const details = [
     "Last Login": "2018-09-20T04:24:12.965Z",
     "Open Issues": 27791,
     "Sites": 41988,
+    "Phone": "461-509-9431",
+    "Password": "uH7KCKPtZUoVwRF",
     "Inspections": [
       {
         "id": "1",
@@ -643,6 +657,8 @@ export const details = [
     "Last Login": "2018-12-16T04:46:20.804Z",
     "Open Issues": 82448,
     "Sites": 69717,
+    "Phone": "1-829-422-0694",
+    "Password": "uH7KCKPtZUoVwRF",
     "Inspections": [
       {
         "id": "1",
@@ -726,6 +742,8 @@ export const details = [
     "Last Login": "2019-05-07T16:44:21.476Z",
     "Open Issues": 60057,
     "Sites": 74620,
+    "Phone": "(836) 789-0370",
+    "Password": "uH7KCKPtZUoVwRF",
     "Inspections": [
       {
         "id": "1",
@@ -809,6 +827,8 @@ export const details = [
     "Last Login": "2019-03-13T06:11:52.868Z",
     "Open Issues": 56837,
     "Sites": 36983,
+    "Phone": "(941) 691-2107",
+    "Password": "uH7KCKPtZUoVwRF",
     "Inspections": [
       {
         "id": "1",

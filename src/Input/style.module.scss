@@ -1,9 +1,22 @@
-.SideFilterInput {
-  margin: 20px 0;
+.Input {
+  margin: 20px 0 0;
   .label {
     font-size: 1rem;
     font-weight: 700;
     color: #c71585;
+  }
+  &--question {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 5%;
+      right: 6.1%;
+      background-image: url(./images/icons/question-circle-solid.svg);
+      background-repeat: no-repeat;
+      width: 10px;
+      height: 10px;
+    }
   }
   input,
   select {

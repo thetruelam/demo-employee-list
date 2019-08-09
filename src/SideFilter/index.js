@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import uuid from 'uuid/v4';
 
 import classes from './style.module.scss'
-import SideFilterInput from './SideFilterInput';
+import Input from '../Input';
 import { fetchSelect, inputChange } from './actions';
 import Spinner from '../Spinner';
 
@@ -20,7 +20,7 @@ class SideFilter extends React.Component {
 
   handleInputChange = (e) => {
     let data = {
-      [e.target.name]: e.target.value.replace(/[^\w\s]/gi, '')
+      [e.target.name.toLowerCase()]: e.target.value.replace(/[^\w\s]/gi, '')
     }
     // console.log(data);
     this.props.inputChange(data);
@@ -39,10 +39,38 @@ class SideFilter extends React.Component {
       filter = <Spinner />
     } else {
       filter.push(
-        <SideFilterInput type='text' key={uuid()} name='Name' onChange={this.handleInputChange} />,
-        <SideFilterInput type='text' key={uuid()} name='EmployeeID' onChange={this.handleInputChange} />,
-        <SideFilterInput type='select' key={uuid()} name='Positions' options={positions} onChange={this.handleInputChange} />,
-        <SideFilterInput type='select' key={uuid()} name='Departments' options={departments} onChange={this.handleInputChange} />
+        <Input 
+          type='text' 
+          key={uuid()} 
+          label='Name' 
+          name='Name' 
+          placeholder='Name' 
+          onChange={this.handleInputChange} 
+        />,
+        <Input 
+          type='text' 
+          key={uuid()} 
+          label='Employee ID' 
+          name='EmployeeID' 
+          placeholder='Employee ID' 
+          onChange={this.handleInputChange} 
+        />,
+        <Input 
+          type='select' 
+          key={uuid()} 
+          label='Positions' 
+          name='Positions' 
+          options={[{ID:'Any', Name:'Any'}].concat(positions)} 
+          onChange={this.handleInputChange} 
+        />,
+        <Input 
+          type='select' 
+          key={uuid()} 
+          label='Departments' 
+          name='Departments' 
+          options={[{ID:'Any', Name:'Any'}].concat(departments)} 
+          onChange={this.handleInputChange} 
+        />
       )
     }
 

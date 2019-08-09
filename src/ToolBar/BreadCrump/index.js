@@ -8,7 +8,9 @@ const ToolBarBreadCrump = ({ locations, employeeDetail }) => {
     <div className={classes['ToolBar__BreadCrump']}>
       <Link to="/employees">Employees</Link>
       {locations.length > 1 && employeeDetail && (
-        <span> > <Link to={`/employees/${employeeDetail.id}`}>{employeeDetail.Name}</Link></span>
+        <span> >
+          &nbsp;{employeeDetail && <Link to={`/employees/${employeeDetail.id}`}>{employeeDetail.Name}</Link>}
+        </span>
       )}
     </div>
   )

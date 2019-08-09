@@ -6,7 +6,11 @@ import { Row, Col } from 'antd'
 import classes from './style.module.scss';
 import { fetchEmployeeDetail } from './actions';
 import Spinner from '../Spinner';
-import EmployeeDetailOverall from './EmployeeDetailOverall';
+import EmployeeDetailOverall from './Overall';
+import EmployeeDetailDetails from './Details';
+import EmployeeDetailInspections from './Inspections';
+import EmployeeDetailCredentials from './Credentials';
+import NotFoundPage from '../NotFoundPage';
 
 class EmployeeDetail extends Component {
   componentDidMount() {
@@ -18,6 +22,10 @@ class EmployeeDetail extends Component {
     const { isFetching, detail } = this.props;
     let render;
 
+    if ((!detail || detail === 'Not found') && !isFetching) {
+      return <NotFoundPage />
+    }
+
     if (isFetching) {
       render = (
         <div className={classes['EmployeeDetail__spinner-wrap']}>
@@ -25,17 +33,29 @@ class EmployeeDetail extends Component {
         </div>
       )
     } else {
-      // console.log(detail);
       render = (
         <>
           <Row type='flex' justify='space-around'>
-            <Col span={10}>
+            <Col span={11} >
               <EmployeeDetailOverall detail={detail} />
             </Col>
-            <Col span={10}>2</Col>
+            <Col span={11}>
+              <Row>
+                <Col span={24}>
+                  <EmployeeDetailDetails detail={detail} />
+                </Col>
+              </Row>
+              <Row style={{ paddingTop: '2rem' }}>
+                <Col span={24}>
+                  <EmployeeDetailCredentials detail={detail} />
+                </Col>
+              </Row>
+            </Col>
           </Row>
-          <Row>
-            <Col span={24}>3</Col>
+          <Row type='flex' justify='space-around' style={{ paddingTop: '2rem' }}>
+            <Col span={23}>
+              <EmployeeDetailInspections inspections={detail.Inspections} />
+            </Col>
           </Row>
         </>
       )

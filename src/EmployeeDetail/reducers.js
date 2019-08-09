@@ -2,8 +2,7 @@ import * as actionsType from './actionsType';
 
 const initState = {
   isFetching: true,
-  detail: null,
-  error: null
+  detail: null
 }
 
 const fetchEmployeeDetailStart = (state, action) => {
@@ -23,11 +22,8 @@ const fetchEmployeeDetailSucceed = (state, action) => {
 }
 
 const fetchEmployeeDetailFail = (state, action) => {
-  const { error } = action;
-
   return {
     ...state,
-    error,
     isFetching: false
   }
 }

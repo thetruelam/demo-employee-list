@@ -1,0 +1,9 @@
+@import "../mixins";
+
+.inspections {
+  @extend %block;
+  margin-bottom: 3rem;
+  &-wrap {
+    padding: 2rem 1rem 1rem;
+  }
+}

@@ -6,16 +6,17 @@ import Layout from './Layout';
 import EmployeeTable from './EmployeeTable';
 import SideFilter from './SideFilter';
 import ButtonAdd from './ButtonAdd';
-import Aux from './hoc/A';
 import EmployeeDetail from './EmployeeDetail';
+import ErrorPage from './ErrorPage';
+import NotFoundPage from './NotFoundPage';
 
 function App() {
   let home = (
-    <Aux>
+    <>
       <SideFilter />
       <EmployeeTable />
       <ButtonAdd />
-    </Aux>
+    </>
   )
 
   return (
@@ -24,6 +25,8 @@ function App() {
         <Route exact path="/" render={() => <Redirect to="/employees" />} />
         <Route exact path="/employees" render={() => home} />
         <Route exact path="/employees/:id" render={() => <EmployeeDetail />} />
+        <Route exact path="/error" render={() => <ErrorPage />} />
+        <Route render={() => <NotFoundPage />} />
       </Switch>
     </Layout>
   );

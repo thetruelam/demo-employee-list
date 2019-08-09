@@ -7,10 +7,10 @@ import { withRouter } from 'react-router-dom';
 
 import classes from './style.module.scss';
 import { toggleSideFilter } from '../SideFilter/actions';
-import ToolBarButtonFilter from './ToolBarButtonFilter';
-import ToolBarButtonFeatures, { features } from './ToolBarButtonFeatures';
+import ToolBarButtonFilter from './ButtonFilter';
+import ToolBarButtonFeatures, { features } from './ButtonFeatures';
 import { toggleSelectColumns, deleteEmployees, downloadEmployees } from '../EmployeeTable/actions';
-import ToolBarBreadCrump from './ToolBarBreadCrump';
+import ToolBarBreadCrump from './BreadCrump';
 
 const ToolBar = ({
   location,

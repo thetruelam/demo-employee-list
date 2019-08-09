@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import './style.scss';
 
-import EmployeeTableHeader from './EmployeeTableHeader';
-import EmployeeTableRow from './EmployeeTableRow';
+import EmployeeTableHeader from './Header';
+import EmployeeTableRow from './Row';
 import Spinner from '../Spinner';
 import { fetchEmployees, toggleSelectAll, toggleSelectOneRow } from './actions';
-import Aux from '../hoc/A';
 
 class EmployeeTable extends React.Component {
   componentDidMount() {
@@ -58,7 +57,7 @@ class EmployeeTable extends React.Component {
       }
 
       table = (
-        <Aux>
+        <>
           <EmployeeTableHeader
             fields={fields}
             showCheckBox={isSelectColumns}
@@ -75,7 +74,7 @@ class EmployeeTable extends React.Component {
               handleRowClick={this.handleRowClick}
             />
           ))}
-        </Aux>
+        </>
       )
     }
 

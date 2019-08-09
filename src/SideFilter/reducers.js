@@ -49,7 +49,6 @@ const SideFilter = (state = initState, action) => {
       return {
         ...state,
         isFetching: false,
-        error: action.error
       }
     case INPUT_CHANGE:
       return {

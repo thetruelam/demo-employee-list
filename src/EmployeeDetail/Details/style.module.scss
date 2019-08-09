@@ -1,0 +1,6 @@
+@import "../mixins";
+
+.details {
+  @extend %block;
+  padding-bottom: 50px;
+}

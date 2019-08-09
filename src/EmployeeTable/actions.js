@@ -1,6 +1,7 @@
 import { parseAsync } from 'json2csv';
 
 import * as actionsType from './actionsType';
+import { setError } from '../withErrorHandler/actions';
 
 /**
  * Fetch actions
@@ -33,6 +34,7 @@ export const fetchEmployees = () => async (dispatch, getState) => {
       dispatch(fetchEmployeesSucceed(listEmployees));
     } catch (error) {
       dispatch(fetchEmployeesFail(error));
+      dispatch(setError(error))
     }
   }
 }
@@ -107,12 +109,14 @@ export const downloadEmployees = () => async (dispatch, getState) => {
       return csv;
     } else {
       dispatch(downloadEmployeesFail('There are no employees to export'));
+      dispatch(setError('There are no employees to export'))
       return {
         error: 'There are no employees to export'
       }
     }
   } catch (error) {
     dispatch(downloadEmployeesFail(error));
+    dispatch(setError(error));
     return error;
   }
 }

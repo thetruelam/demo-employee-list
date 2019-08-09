@@ -3,6 +3,21 @@
   width: 100vw;
   position: relative;
   padding: 2rem 0;
+  // overflow: scroll;
+  &:before {
+    content: "";
+    background-image: url(https://w.wallhaven.cc/full/j5/wallhaven-j5y525.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.2;
+  }
   &__spinner-wrap {
     position: fixed;
     top: 50%;

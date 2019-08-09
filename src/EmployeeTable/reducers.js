@@ -3,7 +3,6 @@ import * as actionsType from './actionsType';
 const initState = {
   isFetching: true,
   listEmployees: [],
-  error: '',
   isSelectColumns: false,
   isSelectAll: false,
 }
@@ -33,7 +32,6 @@ const fetchEmployeesFail = (state, action) => {
   return {
     ...state,
     isFetching: false,
-    error: action.error.message
   }
 }
 
@@ -107,8 +105,7 @@ const downloadEmployeesSucceed = (state, action) => {
 
 const downloadEmployeesFail = (state, { error }) => {
   return {
-    ...state,
-    error
+    ...state
   }
 }
 

@@ -1,4 +1,5 @@
 import * as actionsType from './actionsType';
+import { setError } from '../withErrorHandler/actions';
 
 const fetchEmployeeDetailStart = () => ({
   type: actionsType.FETCH_EMPLOYEE_DETAIL_START
@@ -24,5 +25,6 @@ export const fetchEmployeeDetail = id => async (dispatch, getState) => {
     dispatch(fetchEmployeeDetailSucceed(detail));
   } catch (error) {
     dispatch(fetchEmployeeDetailFail(error));
+    dispatch(setError(error));
   }
 }
